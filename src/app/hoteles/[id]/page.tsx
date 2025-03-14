@@ -13,9 +13,10 @@ import { Skeleton } from "@/components/ui/skeleton"
 import { HabitacionesList } from "@/components/habitaciones-list"
 import { use } from "react"
 
+// Update the interface to make searchParams a Promise as well
 interface PageProps {
   params: Promise<{ id: string }>
-  searchParams?: Record<string, string | string[] | undefined>
+  searchParams?: Promise<Record<string, string | string[] | undefined>>
 }
 
 export default function HotelDetailPage({ params }: PageProps) {
@@ -211,4 +212,3 @@ export default function HotelDetailPage({ params }: PageProps) {
     </div>
   )
 }
-
